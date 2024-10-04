@@ -49,7 +49,7 @@ class Solution:
             visit.add((i,j))
             ans=dfs(i+1,j,cur+1) or dfs(i-1,j,cur+1) or dfs(i,j+1,cur+1) or dfs(i,j-1,cur+1)
             
-            visit.remove(i,j)
+            visit.remove((i,j))
             
             return ans
         
@@ -58,7 +58,7 @@ class Solution:
         for i in range(n):
             for j in range(m):
                 
-                if board[i][j]==word[i][j]:
+                if board[i][j]==word[0]:
                     if dfs(i,j,0):
                         return True
                     
